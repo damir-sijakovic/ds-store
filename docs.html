@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html>
+<title>Docs</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<style>
+    body{font-family:"Poppins" !important; background:#fff; color:black;} 
+    h1,h2,h3,h4,h5,h6{font-family:"Poppins",Arial,sans-serif;}
+    .w3-block{margin-bottom:6px} 
+    .w3-code{font-family:monospace; font-size: 14px; border-left: 4px solid #CCC; } 
+    .w3-table{
+        font-size: 12px;
+    }
+    .ds-drawer{
+		background:#B3CDFF;
+		color:black;
+		border-radius: 5px;
+	}
+    .ds-drawer:hover{
+		box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+	}
+</style>
+
+
+<body>
+<div class="w3-container">
+
+<h2>DS Store</h2>
+<p>This is webshop database written in SQL. Created and tested on MariaDB server.
+You can use this to learn SQL or add this to whatever framework you are using to build your webshop.
+</p>
+  
+  
+<button onclick="cllckAction(this)" class="w3-btn w3-block ds-drawer w3-left-align">Install</button>
+<div class="w3-container w3-hide">
+  <h4>How to install</h4>
+  <p>Use phpMyAdmin or DBeaver. And drop in sql code from "init.sql".
+    Fake data is in "data.sql".</p>
+</div>
+
+  
+  
+<h4>Tables</h4>
+  
+    
+<button onclick="cllckAction(this)" class="w3-btn w3-block ds-drawer w3-left-align">product</button>
+<div class="w3-container w3-hide">
+
+  <p>This is table containing product data.</p>
+  
+  <table class="w3-table w3-striped w3-border">
+    <tr>
+      <th>Column</th>
+      <th>Type</th>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td>varchar 64</td>
+    </tr>
+    
+    <tr>
+      <td>slug</td>
+      <td>varchar 128</td>
+    </tr>
+    
+    <tr>
+      <td>shortDescription</td>
+      <td>varchar 512</td>
+    </tr>
+    
+    <tr>
+      <td>description</td>
+      <td>varchar 2048</td>
+    </tr>
+    
+    <tr>
+      <td>sku</td>
+      <td>varchar 128</td>
+    </tr>
+    
+    <tr>
+      <td>price</td>
+      <td>float</td>
+    </tr>
+    
+    <tr>
+      <td>onsale</td>
+      <td>boolean</td>
+    </tr>
+    
+    <tr>
+      <td>onsalePrice</td>
+      <td>float</td>
+    </tr>
+    
+    <tr>
+      <td>externalUrl</td>
+      <td>varchar 2048</td>
+    </tr>
+    
+    <tr>
+      <td>meta</td>
+      <td>json</td>
+    </tr>
+    
+    <tr>
+      <td>productImage</td>
+      <td>varchar 2048</td>
+    </tr>
+    
+    <tr>
+      <td>createdAt</td>
+      <td>datetime now</td>
+    </tr>
+    
+    <tr>
+      <td>modifiedAt</td>
+      <td>datetime</td>
+    </tr>
+    
+  </table>
+ 
+ <br>
+  
+</div>
+
+
+
+
+
+
+
+  
+  
+  
+<button onclick="cllckAction(this)" class="w3-btn w3-block ds-drawer w3-left-align">category</button>
+
+<div class="w3-container w3-hide">
+
+  <p>This is table containing categories.</p>
+  
+  <table class="w3-table w3-striped w3-border">
+    <tr>
+      <th>Column</th>
+      <th>Type</th>
+    </tr>
+    
+    <tr>
+      <td>name</td>
+      <td>varchar 64</td>
+    </tr>
+    
+    <tr>
+      <td>slug</td>
+      <td>varchar 128</td>
+    </tr>
+    
+    <tr>
+      <td>shortDescription</td>
+      <td>varchar 512</td>
+    </tr>
+    
+    <tr>
+      <td>description</td>
+      <td>varchar 2048</td>
+    </tr>
+        
+    <tr>
+      <td>meta</td>
+      <td>json</td>
+    </tr>
+    
+    <tr>
+      <td>categoryImage</td>
+      <td>varchar 2048</td>
+    </tr>
+    
+    <tr>
+      <td>createdAt</td>
+      <td>datetime now</td>
+    </tr>
+    
+    <tr>
+      <td>modifiedAt</td>
+      <td>datetime</td>
+    </tr>
+    
+  </table>
+  
+  <br>
+  
+</div>
+
+
+
+
+
+
+
+
+  
+  
+  
+<button onclick="cllckAction(this)" class="w3-btn w3-block ds-drawer w3-left-align">tag</button>
+
+<div class="w3-container w3-hide">
+
+  <p>This is table containing tags.</p>
+  
+  <table class="w3-table w3-striped w3-border">
+    <tr>
+      <th>Column</th>
+      <th>Type</th>
+    </tr>
+    
+    <tr>
+      <td>name</td>
+      <td>varchar 64</td>
+    </tr>
+    
+    <tr>
+      <td>slug</td>
+      <td>varchar 128</td>
+    </tr>
+
+    <tr>
+      <td>meta</td>
+      <td>json</td>
+    </tr>
+        
+    <tr>
+      <td>createdAt</td>
+      <td>datetime now</td>
+    </tr>
+    
+    <tr>
+      <td>modifiedAt</td>
+      <td>datetime</td>
+    </tr>
+    
+  </table>
+  
+  <br>
+  
+</div>
+
+
+
+
+
+
+
+
+  
+  
+  
+<button onclick="cllckAction(this)" class="w3-btn w3-block ds-drawer w3-left-align">order</button>
+
+<div class="w3-container w3-hide">
+
+  <p>This is table containing orders.</p>
+  
+  <table class="w3-table w3-striped w3-border">
+    <tr>
+      <th>Column</th>
+      <th>Type</th>
+    </tr>
+    
+    <tr>
+      <td>name</td>
+      <td>varchar 64</td>
+    </tr>
+    
+    <tr>
+      <td>address</td>
+      <td>varchar 128</td>
+    </tr>
+    
+    <tr>
+      <td>state</td>
+      <td>varchar 128</td>
+    </tr>
+
+    
+    <tr>
+      <td>country</td>
+      <td>varchar 128</td>
+    </tr>
+
+    
+    <tr>
+      <td>town</td>
+      <td>varchar 128</td>
+    </tr>
+    
+    <tr>
+      <td>phone</td>
+      <td>varchar 24</td>
+    </tr>
+    
+    <tr>
+      <td>zipcode</td>
+      <td>varchar 24</td>
+    </tr>
+
+    <tr>
+      <td>note</td>
+      <td>text</td>
+    </tr>
+
+    <tr>
+      <td>meta</td>
+      <td>json</td>
+    </tr>
+    
+    <tr>
+      <td>closed</td>
+      <td>datetime</td>
+    </tr>
+        
+    <tr>
+      <td>createdAt</td>
+      <td>datetime now</td>
+    </tr>
+    
+    <tr>
+      <td>modifiedAt</td>
+      <td>datetime</td>
+    </tr>
+    
+  </table>
+  
+  <br>
+  
+</div>
+
+
+
+
+
+
+
+
+  
+  
+  
+<button onclick="cllckAction(this)" class="w3-btn w3-block ds-drawer w3-left-align">parent_category_links</button>
+
+<div class="w3-container w3-hide">
+
+  <p>This is table where you can add parent categories to categories. Basically this is how you can define sub-categories. Just be careful not to set parent category and then set child as parent.</p>
+  
+  <table class="w3-table w3-striped w3-border">
+    <tr>
+      <th>Column</th>
+      <th>Type</th>
+    </tr>
+      
+    <tr>
+      <td>parentCategoryId</td> 
+      <td>link</td>
+    </tr>
+    
+    <tr>
+      <td>childCategoryId</td>
+      <td>link</td>
+    </tr>
+        
+  </table>
+  
+  <br>
+  
+</div>
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+<button onclick="cllckAction(this)" class="w3-btn w3-block ds-drawer w3-left-align">order_products_links</button>
+
+<div class="w3-container w3-hide">
+
+  <p>This is where you link products to order with amount. If there is no order or product, link is deleted.</p>
+  
+  <table class="w3-table w3-striped w3-border">
+    <tr>
+      <th>Column</th>
+      <th>Type</th>
+    </tr>
+      
+    <tr>
+      <td>orderId</td> 
+      <td>link</td>
+    </tr>
+    
+    <tr>
+      <td>productId</td>
+      <td>link</td>
+    </tr>
+        
+    <tr>
+      <td>amount</td>
+      <td>integer</td>
+    </tr>
+        
+  </table>
+  
+  <br>
+  
+</div>
+
+
+
+
+
+
+  
+  
+  
+<button onclick="cllckAction(this)" class="w3-btn w3-block ds-drawer w3-left-align">product_category_links</button>
+
+<div class="w3-container w3-hide">
+
+  <p>This is where you link product to category.</p>
+  
+  <table class="w3-table w3-striped w3-border">
+    <tr>
+      <th>Column</th>
+      <th>Type</th>
+    </tr>
+      
+    <tr>
+      <td>categoryId</td> 
+      <td>link</td>
+    </tr>
+    
+    <tr>
+      <td>productId</td>
+      <td>link</td>
+    </tr>
+        
+        
+  </table>
+  
+  <br>
+  
+</div>
+
+
+
+
+
+
+
+  
+  
+  
+<button onclick="cllckAction(this)" class="w3-btn w3-block ds-drawer w3-left-align">product_tag_links</button>
+
+<div class="w3-container w3-hide">
+
+  <p>This is where you link product to tag.</p>
+  
+  <table class="w3-table w3-striped w3-border">
+    <tr>
+      <th>Column</th>
+      <th>Type</th>
+    </tr>  
+      
+    <tr>
+      <td>tagId</td> 
+      <td>link</td>
+    </tr>
+    
+    <tr>
+      <td>productId</td>
+      <td>link</td>
+    </tr>
+                
+  </table>
+  
+  <br>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h4>Usage</h4>
+
+
+<button onclick="cllckAction(this)" class="w3-btn w3-block ds-drawer w3-left-align">Product</button>
+<div class="w3-container w3-hide">
+    <p>This is how you add product to category. </p>
+    
+   <div class="w3-code sqlHigh notranslate">
+    INSERT INTO `product` (`name`, `sku`, `slug`, `shortDescription`, `description`, `price`, `onSale`, `onSalePrice`, `externalUrl`, `productImage`) VALUES <br>
+    ( <br>
+        "Name name", <br>
+        "10000", <br>
+        "name-name", <br>
+        "Short description", <br>
+        "Long description", <br>
+        33.0, <br>
+        0, <br>
+        0, <br>
+        "https//www.store.com/id/2432423", <br>
+        "image000100.jpg" <br>
+    ); <br>
+  </div>
+  
+   <p>Get list of all products. </p>
+    
+   <div class="w3-code sqlHigh notranslate">
+    SELECT * FROM `product`; 
+  </div>
+  
+</div>
+
+
+
+<button onclick="cllckAction(this)" class="w3-btn w3-block ds-drawer w3-left-align">Category</button>
+<div class="w3-container w3-hide">
+    <p>This is how you add category. </p>
+    
+   <div class="w3-code sqlHigh notranslate">
+
+    INSERT INTO `category` (`name`, `slug`, `shortDescription`, `description`, `categoryImage`) VALUES<br>
+    (<br>
+        "Phones",<br>
+        "phones",<br>
+        "Short description",<br>
+        "Long description",<br>
+        "image34440.jpg"<br>
+    );<br>
+
+  </div>
+  
+     <p>Get list of all categories. </p>
+    
+   <div class="w3-code sqlHigh notranslate">
+    SELECT * FROM `category`; 
+  </div>
+</div>
+
+
+
+<button onclick="cllckAction(this)" class="w3-btn w3-block ds-drawer w3-left-align">Tag</button>
+<div class="w3-container w3-hide">
+    <p>This is how you add tag. </p>
+    
+   <div class="w3-code sqlHigh notranslate">
+
+    INSERT INTO `tag` (`name`, `slug`) VALUES<br>
+    (<br>
+        "White",<br>
+        "white"<br>
+    );<br>
+
+  </div>
+  <p>Get list of all tags. </p>
+  
+     <div class="w3-code sqlHigh notranslate">
+    SELECT * FROM `tag`; 
+  </div>
+  
+</div>
+
+
+
+<button onclick="cllckAction(this)" class="w3-btn w3-block ds-drawer w3-left-align"> Add product to category </button>
+<div class="w3-container w3-hide">
+    <p>To add product to category use this code with ids: </p>
+    
+   <div class="w3-code sqlHigh notranslate">
+        INSERT INTO `product_category_links` (`categoryId`, `productId`) VALUES <br>
+        ( <br>
+            1, <br>
+            1 <br>
+        ); <br>
+  </div>
+</div>
+
+
+
+<button onclick="cllckAction(this)" class="w3-btn w3-block ds-drawer w3-left-align"> Add tag to product </button>
+<div class="w3-container w3-hide">
+    <p>To attach product to tag use this code with ids: </p>
+    
+   <div class="w3-code sqlHigh notranslate">
+        INSERT INTO `product_tag_links` (`tagId`, `productId`) VALUES <br>
+        ( <br>
+            1, <br>
+            1 <br>
+        ); <br>
+  </div>
+</div>
+
+
+
+<button onclick="cllckAction(this)" class="w3-btn w3-block ds-drawer w3-left-align">Get products with category </button>
+<div class="w3-container w3-hide">
+    <p>List from specific category. In example "phones".</p>
+   <div class="w3-code sqlHigh notranslate">
+    SELECT * FROM `product` WHERE `id`  <br>
+    IN (SELECT `id` FROM `product_category_links` WHERE `categoryId`  <br>
+    IN (SELECT `id` FROM `category` WHERE `name`='phones' ));
+  </div>
+</div>
+
+
+<button onclick="cllckAction(this)" class="w3-btn w3-block ds-drawer w3-left-align">Get products with tag </button>
+<div class="w3-container w3-hide">
+    <p>Product list with tag "blue".</p>
+   <div class="w3-code sqlHigh notranslate">
+    SELECT * FROM `product` WHERE `id`  <br>
+    IN (SELECT `id` FROM `product_tag_links` WHERE `tagId`  <br>
+    IN (SELECT `id` FROM `tag` WHERE `name`='blue' ));
+  </div>
+</div>
+
+
+
+<button onclick="cllckAction(this)" class="w3-btn w3-block ds-drawer w3-left-align">Orders</button>
+<div class="w3-container w3-hide">
+    
+    <p>Show all orders:</p>
+   <div class="w3-code sqlHigh notranslate">
+    SELECT * FROM `order`; 
+  </div>
+  
+    <p>Select non-closed orders:</p>
+   <div class="w3-code sqlHigh notranslate">
+    SELECT * FROM `order` WHERE `closed` = FALSE;
+  </div>
+  
+    <p>Close an order, set to datetime now().</p>
+   <div class="w3-code sqlHigh notranslate">
+    UPDATE `order` SET `closed` = NOW() WHERE `email` = 'hello71@jemail.com';<br> 
+	UPDATE `order` SET `closed` = NOW() WHERE `id` = 2;
+  </div>
+  
+  
+   <p>Create order item:</p>
+     <div class="w3-code sqlHigh notranslate">
+        INSERT INTO `order` (`name`, `address`, `state`, `country`, `town`, `phone`, `email`,`zipCode`, `note`) VALUES <br>
+        ( <br>    
+            "John Johnson", <br>  
+            "Long street 176", <br>  
+            "Newstate", <br>  
+            "Gnomeland", <br>  
+            "Newtown", <br>  
+            "342234234", <br>  
+            "hello71@jemail.com", <br>  
+            "34343", <br>  
+            "This is delivery note..." <br>  
+        ); <br>  
+  </div>
+  
+  
+   <p>Show ordered products with email "hello71@jemail.com":</p>
+     <div class="w3-code sqlHigh notranslate">
+        SELECT * FROM `product` WHERE `id` IN (SELECT `id` FROM `product_order_links` WHERE `orderId` 
+		IN (SELECT `id` FROM `order` WHERE `email`='hello71@jemail.com' ) ); 
+  </div>
+  
+  
+</div>
+
+
+
+
+
+<button onclick="cllckAction(this)" class="w3-btn w3-block ds-drawer w3-left-align">Search</button>
+<div class="w3-container w3-hide">
+    <p>Search in product names and description. We search for term "icons" in example.</p>
+   <div class="w3-code sqlHigh notranslate">
+    SELECT * FROM `product` <br>
+    WHERE CONVERT(`description` USING utf8mb4) LIKE '%icons%'<br>
+    OR CONVERT(`name` USING utf8mb4) LIKE '%icons%';
+  </div>
+</div>
+
+
+
+
+
+<button onclick="cllckAction(this)" class="w3-btn w3-block ds-drawer w3-left-align">Meta</button>
+<div class="w3-container w3-hide">
+    <p>Meta column exists to pack extra data into row data as JSON. For example you can add product variations or
+    translations.</p>
+    
+    <p>Setting "key1" key and "new_value" value to product with is 1.</p>
+   <div class="w3-code sqlHigh notranslate">
+    UPDATE product<br>
+    SET metaJson = JSON_OBJECT('key1', 'new_value')<br>
+    WHERE id = '1';
+  </div>
+  
+  
+   <p>Getting "key1" value from product with id 1.</p>
+   <div class="w3-code sqlHigh notranslate">
+        SELECT JSON_EXTRACT(metaJson, '$.key1') AS extracted_key <br>
+        FROM product <br>
+        WHERE id = 1 <br>
+        LIMIT 1;
+  </div>
+  
+  
+  
+  
+  
+  
+  
+</div>
+
+
+
+
+
+<div class="w3-container w3-center w3-small">
+  <p>Damir Sijakovic - MIT Licence</p>
+</div>
+
+
+</div>
+</body>
+</html>
+
+
+
+<script>
+function cllckAction(that) {    
+  
+    var x = that.nextElementSibling;
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else { 
+        x.className = x.className.replace(" w3-show", "");
+    }   
+}
+</script>
+
+
+<script src="https://www.w3schools.com/lib/w3codecolor.js"></script>
+
+<script>
+w3CodeColor();
+</script>
