@@ -1,5 +1,3 @@
-https://pandao.github.io/editor.md/en.html
-
 ## DS Store Database
 
 This is webshop database written in SQL. Created and tested on MariaDB server.
